@@ -12,6 +12,7 @@ import com.vimalvijay.mynotes.utils.Constants.ACT_ADD
 import com.vimalvijay.mynotes.utils.Constants.ACT_UPDATE
 import com.vimalvijay.mynotes.utils.Constants.KEY_ACTION_TYPE
 import com.vimalvijay.mynotes.utils.Constants.KEY_NOTE_MODEL
+import com.vimalvijay.mynotes.utils.Constants.commonDateFormat
 import com.vimalvijay.mynotes.utils.showSmallToast
 import com.vimalvijay.mynotes.views.dbhelpers.model.NotesModel
 import com.vimalvijay.mynotes.views.ui.MainActivity.Companion.getMainInstance
@@ -55,7 +56,8 @@ class UpdateNotesFragment : Fragment() {
                 val notesModel = NotesModel(
                     updateNoteUi.edtTitle.text.toString(),
                     updateNoteUi.edtDescription.text.toString(),
-                    updateNoteUi.cbPrority.isChecked
+                    updateNoteUi.cbPrority.isChecked,
+                    getCurrentDateAndTime()
                 )
                 if (actionType == ACT_ADD) {
                     notesViewModel.insert(notesModel)
@@ -70,7 +72,12 @@ class UpdateNotesFragment : Fragment() {
         }
     }
 
-    private fun getCurrentDateAndTime(): Date {
-        return Calendar.getInstance().time
+    private fun getCurrentDateAndTime(): Date? {
+        return try {
+            commonDateFormat.parse(commonDateFormat.format(Calendar.getInstance().time))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
     }
 }

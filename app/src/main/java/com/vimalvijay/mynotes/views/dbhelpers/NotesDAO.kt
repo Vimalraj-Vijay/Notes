@@ -1,7 +1,6 @@
 package com.vimalvijay.mynotes.views.dbhelpers
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import com.vimalvijay.mynotes.views.dbhelpers.model.NotesModel
 
@@ -17,7 +16,7 @@ interface NotesDAO {
     @Delete
     fun deleteNotes(notesModel: NotesModel)
 
-    @Query("SELECT * FROM NotesModel")
+    @Query("SELECT * FROM NotesModel ORDER BY id")
     fun getAllNotes(): LiveData<List<NotesModel>>
 
     @Query("SELECT * FROM NotesModel WHERE id =:id")

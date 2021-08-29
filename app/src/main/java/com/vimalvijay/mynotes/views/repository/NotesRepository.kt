@@ -1,7 +1,6 @@
 package com.vimalvijay.mynotes.views.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.vimalvijay.mynotes.database.AppDatabase
 import com.vimalvijay.mynotes.views.dbhelpers.model.NotesModel
 
@@ -23,7 +22,7 @@ class NotesRepository(val appDatabase: AppDatabase) {
         return appDatabase.getNotesDAO().getAllNotes()
     }
 
-    fun getNoteById(id: Int):LiveData<NotesModel> {
+    fun getNoteById(id: Int): LiveData<NotesModel> {
         return appDatabase.getNotesDAO().getNotesById(id)
     }
 

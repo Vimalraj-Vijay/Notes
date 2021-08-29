@@ -10,6 +10,9 @@ import com.vimalvijay.mynotes.R
 import com.vimalvijay.mynotes.databinding.ViewNotesBinding
 import com.vimalvijay.mynotes.utils.Constants.ACT_DELETE
 import com.vimalvijay.mynotes.utils.Constants.ACT_UPDATE
+import com.vimalvijay.mynotes.utils.DateConvertor.dateToText
+import com.vimalvijay.mynotes.utils.gone
+import com.vimalvijay.mynotes.utils.visible
 import com.vimalvijay.mynotes.views.dbhelpers.model.NotesModel
 
 class NotesAdapter(
@@ -33,7 +36,12 @@ class NotesAdapter(
     override fun onBindViewHolder(holder: NotesAdapter.NotesViewHolder, position: Int) {
         holder.notesAdpterUi.tvNotesTitle.text = noteList[position].title
         holder.notesAdpterUi.tvNotesDescription.text = noteList[position].description
-        //holder.notesAdpterUi.tvNotesTime.text = noteList[position].createdAndUpdatedDate.toString()
+        if (noteList[position].updateTime == null) {
+            holder.notesAdpterUi.tvNotesTime.gone()
+        } else {
+            holder.notesAdpterUi.tvNotesTime.visible()
+            holder.notesAdpterUi.tvNotesTime.text = dateToText(noteList[position].updateTime)
+        }
         if (noteList[position].priority) {
             holder.notesAdpterUi.ivPriorityMarker.setColorFilter(
                 ContextCompat.getColor(
@@ -60,11 +68,4 @@ class NotesAdapter(
     override fun getItemCount(): Int {
         return noteList.size
     }
-
-    fun updateNotes(noteList: List<NotesModel>) {
-        this.noteList = noteList
-        notifyDataSetChanged()
-    }
-
-
 }

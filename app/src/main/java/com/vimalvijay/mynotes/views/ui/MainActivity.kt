@@ -6,9 +6,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.vimalvijay.mynotes.R
 import com.vimalvijay.mynotes.databinding.ActivityMainBinding
-import com.vimalvijay.mynotes.utils.Constants
-import com.vimalvijay.mynotes.utils.Constants.ACT_ADD
-import com.vimalvijay.mynotes.utils.Constants.KEY_ACTION_TYPE
 import com.vimalvijay.mynotes.utils.gone
 import com.vimalvijay.mynotes.utils.visible
 
@@ -52,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onAddNewNotesClick(bundle: Bundle) {
-        navController.navigate(R.id.action_notesFragment_to_updateNotesFragment,bundle)
+        navController.navigate(R.id.action_notesFragment_to_updateNotesFragment, bundle)
     }
 
     fun onEditNotesClick(bundle: Bundle) {

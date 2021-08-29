@@ -3,7 +3,6 @@ package com.vimalvijay.mynotes.views.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.vimalvijay.mynotes.database.AppDatabase
 import com.vimalvijay.mynotes.views.dbhelpers.model.NotesModel
@@ -21,7 +20,7 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
         return notesRepository.getAllNotes()
     }
 
-    fun getNoteById(id:Int): LiveData<NotesModel> {
+    fun getNoteById(id: Int): LiveData<NotesModel> {
         return notesRepository.getNoteById(id)
     }
 
