@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:background="@drawable/bg_notes"
+        android:padding="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/iv_priority_marker"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="8sp"
+            android:src="@drawable/ic_dot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_notes_title"
+            style="@style/FontBoldItalic"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/text_primary"
+            app:layout_constraintEnd_toStartOf="@+id/iv_delete_notes"
+            app:layout_constraintStart_toEndOf="@+id/iv_priority_marker"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_notes_description"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textColor="@color/text_ternary"
+            app:layout_constraintStart_toEndOf="@+id/iv_priority_marker"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notes_title" />
+
+        <TextView
+            android:id="@+id/tv_notes_time"
+            style="@style/FontRegular"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="12:00PM"
+            android:textColor="@color/text_ternary"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toEndOf="@+id/iv_priority_marker"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notes_description" />
+
+        <ImageView
+            android:id="@+id/iv_delete_notes"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

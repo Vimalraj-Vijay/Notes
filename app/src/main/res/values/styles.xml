@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="AppTheme.NoTitle" parent="Theme.MaterialComponents.DayNight">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorPrimaryVariant">@color/color_primary</item>
+        <item name="colorOnPrimary">@color/color_primary_dark</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary</item>
+        <item name="colorOnSecondary">@color/color_secondary_disable</item>
+    </style>
+
+    <style name="FontRegular">
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:fontFamily">@font/roboto_condensed_regular</item>
+    </style>
+
+    <style name="FontItalic">
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:fontFamily">@font/roboto_condensed_italic</item>
+    </style>
+
+    <style name="FontBold">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:fontFamily">@font/roboto_condensed_bold</item>
+    </style>
+
+    <style name="FontBoldItalic">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:fontFamily">@font/roboto_condensed_bolditalic</item>
+    </style>
+
+
+</resources>

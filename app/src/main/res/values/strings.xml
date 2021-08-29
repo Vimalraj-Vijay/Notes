@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Notes</string>
+    <string name="save">Save</string>
+    <string name="mark_as_priority">Mark as Priority</string>
+    <string name="input_title">Input title</string>
+    <string name="input_description">Input Description</string>
+    <string name="empty_notes_message">You have no notes to show. Click +Add note button to add new notes</string>
+    <string name="add_note">+Add note</string>
+    <string name="notes">Notes</string>
+    <string name="add_notes">Add Notes</string>
+    <string name="update_notes">Update Notes</string>
+    <string name="req_title">Title Field is Required</string>
+</resources>
